@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Lab_4_1.Models
+namespace Lab4_1.Models
 {
-   public class _21GameModel
+    public class GameModel
     {
         public bool ComputerWin = false;
         public int CurrentNumber { get; set; }

@@ -1,0 +1,35 @@
+﻿@model Lab4_1.Models.GameModel
+
+
+
+<h3> @ViewBag.result</h3>
+
+@using (Ajax.BeginForm("TwentyOneGame", "TwentyOne", new AjaxOptions { UpdateTargetId = "gameId" }))
+{
+
+    
+
+        @Html.Hidden("CurrentNumber");
+        <p>Player Input: @Html.DisplayTextFor(p => p.UserInput)</p>
+        <br />
+        @Html.DisplayText("CurrentNumber");
+
+        <label for="number1">1</label>
+
+        @Html.RadioButtonFor(x => x.UserInput, 1, new { id = "number1" })
+
+
+
+        <label for="number2">Or 2</label>
+
+        @Html.RadioButtonFor(x => x.UserInput, 2, new { id = "number2" })
+
+
+        <br />
+        <input type="submit" value="OK" />
+        <br />
+
+    
+}
+
+

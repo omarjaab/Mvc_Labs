@@ -1,23 +1,29 @@
-﻿using Lab_4_1.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Lab4_1.Models;
 
-namespace Lab_4_1.Controllers
+namespace Lab4_1.Controllers
 {
     public class TwentyOneController : Controller
     {
         // GET: TwentyOne
-        [HttpGet]
-        public ActionResult TwentyOneGame()
+        public ActionResult Index()
         {
-            var game = new _21GameModel();
-            return View(game);
+            return View();
         }
+        // get 
+        [HttpGet]
+        public PartialViewResult TwentyOneGame()
+        {
+            var game=new GameModel();
+            return PartialView( game);
+        }
+        // post 
         [HttpPost]
-        public ActionResult TwentyOneGame(_21GameModel game)
+        public PartialViewResult TwentyOneGame(GameModel game)
         {
             game.UserInputLogic();
 
@@ -35,7 +41,7 @@ namespace Lab_4_1.Controllers
             }
 
             ModelState.Remove("CurrentNumber");
-            return View(game);
+            return PartialView(game);
 
         }
     }
